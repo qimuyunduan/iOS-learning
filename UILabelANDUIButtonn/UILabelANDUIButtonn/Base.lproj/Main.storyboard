@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lyr-YM-SN0">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="Anl-YU-ZGt">
+            <objects>
+                <viewController id="TBu-jn-ueN" customClass="ViewController" customModule="UILabelANDUIButtonn" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Fzd-pB-rIO"/>
+                        <viewControllerLayoutGuide type="bottom" id="QHA-DP-74t"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8dB-h7-5ko">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ItD-a8-nL1">
+                                <rect key="frame" x="279" y="290" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wc8-3B-8VB">
+                                <rect key="frame" x="275" y="199" width="51" height="32"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="tap me"/>
+                                <connections>
+                                    <action selector="showMyLabel:" destination="TBu-jn-ueN" eventType="touchUpInside" id="Sxh-RO-eco"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ItD-a8-nL1" firstAttribute="centerX" secondItem="8dB-h7-5ko" secondAttribute="centerX" id="3a8-Td-LLc"/>
+                            <constraint firstItem="ItD-a8-nL1" firstAttribute="centerY" secondItem="8dB-h7-5ko" secondAttribute="centerY" id="7Dx-sK-Jui"/>
+                            <constraint firstItem="Wc8-3B-8VB" firstAttribute="centerX" secondItem="ItD-a8-nL1" secondAttribute="centerX" id="9ry-sz-FVF"/>
+                            <constraint firstItem="ItD-a8-nL1" firstAttribute="top" secondItem="Wc8-3B-8VB" secondAttribute="bottom" constant="59" id="F1b-Ir-VCi"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="beE-KQ-7hh"/>
+                    <connections>
+                        <outlet property="myButton" destination="Wc8-3B-8VB" id="r6f-PF-scw"/>
+                        <outlet property="myLabel" destination="ItD-a8-nL1" id="Xrr-BS-oi9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aSG-4x-Qup" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="215" y="-367"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="5Gr-bg-B1u">
+            <objects>
+                <tabBarController id="lyr-YM-SN0" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="RWC-sw-fVe">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="TBu-jn-ueN" kind="relationship" relationship="viewControllers" id="Zbu-E2-IXK"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lYg-f6-Y8K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-605" y="-36"/>
+        </scene>
+    </scenes>
+</document>

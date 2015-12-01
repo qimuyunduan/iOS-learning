@@ -1,0 +1,295 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F90E94BC1C02D3CF003336AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90E94BB1C02D3CF003336AC /* AppDelegate.swift */; };
+		F90E94BE1C02D3CF003336AC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90E94BD1C02D3CF003336AC /* ViewController.swift */; };
+		F90E94C11C02D3CF003336AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F90E94BF1C02D3CF003336AC /* Main.storyboard */; };
+		F90E94C31C02D3CF003336AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F90E94C21C02D3CF003336AC /* Assets.xcassets */; };
+		F90E94C61C02D3CF003336AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F90E94C41C02D3CF003336AC /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F90E94B81C02D3CF003336AC /* UILabelANDUIButtonn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UILabelANDUIButtonn.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F90E94BB1C02D3CF003336AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F90E94BD1C02D3CF003336AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F90E94C01C02D3CF003336AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F90E94C21C02D3CF003336AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F90E94C51C02D3CF003336AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F90E94C71C02D3CF003336AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F90E94B51C02D3CF003336AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F90E94AF1C02D3CF003336AC = {
+			isa = PBXGroup;
+			children = (
+				F90E94BA1C02D3CF003336AC /* UILabelANDUIButtonn */,
+				F90E94B91C02D3CF003336AC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F90E94B91C02D3CF003336AC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F90E94B81C02D3CF003336AC /* UILabelANDUIButtonn.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F90E94BA1C02D3CF003336AC /* UILabelANDUIButtonn */ = {
+			isa = PBXGroup;
+			children = (
+				F90E94BB1C02D3CF003336AC /* AppDelegate.swift */,
+				F90E94BD1C02D3CF003336AC /* ViewController.swift */,
+				F90E94BF1C02D3CF003336AC /* Main.storyboard */,
+				F90E94C21C02D3CF003336AC /* Assets.xcassets */,
+				F90E94C41C02D3CF003336AC /* LaunchScreen.storyboard */,
+				F90E94C71C02D3CF003336AC /* Info.plist */,
+			);
+			path = UILabelANDUIButtonn;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F90E94B71C02D3CF003336AC /* UILabelANDUIButtonn */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F90E94CA1C02D3CF003336AC /* Build configuration list for PBXNativeTarget "UILabelANDUIButtonn" */;
+			buildPhases = (
+				F90E94B41C02D3CF003336AC /* Sources */,
+				F90E94B51C02D3CF003336AC /* Frameworks */,
+				F90E94B61C02D3CF003336AC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UILabelANDUIButtonn;
+			productName = UILabelANDUIButtonn;
+			productReference = F90E94B81C02D3CF003336AC /* UILabelANDUIButtonn.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F90E94B01C02D3CF003336AC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = qimuyunduan;
+				TargetAttributes = {
+					F90E94B71C02D3CF003336AC = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+				};
+			};
+			buildConfigurationList = F90E94B31C02D3CF003336AC /* Build configuration list for PBXProject "UILabelANDUIButtonn" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F90E94AF1C02D3CF003336AC;
+			productRefGroup = F90E94B91C02D3CF003336AC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F90E94B71C02D3CF003336AC /* UILabelANDUIButtonn */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F90E94B61C02D3CF003336AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F90E94C61C02D3CF003336AC /* LaunchScreen.storyboard in Resources */,
+				F90E94C31C02D3CF003336AC /* Assets.xcassets in Resources */,
+				F90E94C11C02D3CF003336AC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F90E94B41C02D3CF003336AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F90E94BE1C02D3CF003336AC /* ViewController.swift in Sources */,
+				F90E94BC1C02D3CF003336AC /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F90E94BF1C02D3CF003336AC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F90E94C01C02D3CF003336AC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F90E94C41C02D3CF003336AC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F90E94C51C02D3CF003336AC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F90E94C81C02D3CF003336AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F90E94C91C02D3CF003336AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F90E94CB1C02D3CF003336AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = UILabelANDUIButtonn/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.qimuyunduan.UILabelANDUIButtonn;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F90E94CC1C02D3CF003336AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = UILabelANDUIButtonn/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.qimuyunduan.UILabelANDUIButtonn;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F90E94B31C02D3CF003336AC /* Build configuration list for PBXProject "UILabelANDUIButtonn" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F90E94C81C02D3CF003336AC /* Debug */,
+				F90E94C91C02D3CF003336AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F90E94CA1C02D3CF003336AC /* Build configuration list for PBXNativeTarget "UILabelANDUIButtonn" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F90E94CB1C02D3CF003336AC /* Debug */,
+				F90E94CC1C02D3CF003336AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F90E94B01C02D3CF003336AC /* Project object */;
+}
