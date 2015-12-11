@@ -17,6 +17,14 @@ class ViewController2:UIViewController {
     @IBOutlet var serret: UITextField!
     
     
+    
+    
+    override func viewDidLoad() {
+        
+        super.viewDidLoad()
+    }
+    
+    
     @IBAction func tapView(sender: AnyObject) {
         
         self.user.resignFirstResponder()
@@ -25,10 +33,8 @@ class ViewController2:UIViewController {
         
     }
     
-    override func viewDidLoad() {
-        
-        super.viewDidLoad()
-    }
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
