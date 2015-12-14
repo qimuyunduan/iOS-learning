@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3Kq-9p-Xdx">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Cotroller2-->
+        <scene sceneID="U1C-Ao-W0W">
+            <objects>
+                <viewController storyboardIdentifier="app" id="3Kq-9p-Xdx" customClass="ViewCotroller2" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="paU-Yi-h4N"/>
+                        <viewControllerLayoutGuide type="bottom" id="9bH-Yr-yEQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6C0-JI-oiu">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6uQ-By-OOD" userLabel="view" customClass="UIControl">
+                                <rect key="frame" x="126" y="231" width="348" height="138"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用户名" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aje-AL-YM0">
+                                        <rect key="frame" x="0.0" y="0.0" width="55" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="密码" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Iz-UL-b1g">
+                                        <rect key="frame" x="0.0" y="44" width="55" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1hm-1Z-rUq">
+                                        <rect key="frame" x="119" y="0.0" width="201" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="201" id="cKJ-Nk-yAl"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MPX-dW-i84">
+                                        <rect key="frame" x="119" y="38" width="201" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psY-Gh-qMq">
+                                        <rect key="frame" x="0.0" y="101" width="46" height="30"/>
+                                        <state key="normal" title="登录"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cae-fa-2KW">
+                                        <rect key="frame" x="119" y="100" width="46" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="46" id="Nye-UD-Fpr"/>
+                                        </constraints>
+                                        <state key="normal" title="注册"/>
+                                    </button>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ejA-KJ-V2p">
+                                        <rect key="frame" x="271" y="101" width="51" height="31"/>
+                                    </switch>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="9Iz-UL-b1g" firstAttribute="leading" secondItem="psY-Gh-qMq" secondAttribute="leading" id="1xQ-IV-hS1"/>
+                                    <constraint firstItem="1hm-1Z-rUq" firstAttribute="top" secondItem="Aje-AL-YM0" secondAttribute="top" id="B53-Vl-dEh"/>
+                                    <constraint firstItem="MPX-dW-i84" firstAttribute="leading" secondItem="cae-fa-2KW" secondAttribute="leading" id="CH8-er-8t7"/>
+                                    <constraint firstItem="cae-fa-2KW" firstAttribute="leading" secondItem="psY-Gh-qMq" secondAttribute="trailing" constant="73" id="HSZ-nx-zhO"/>
+                                    <constraint firstItem="Aje-AL-YM0" firstAttribute="width" secondItem="9Iz-UL-b1g" secondAttribute="width" id="J3Z-rI-5qc"/>
+                                    <constraint firstItem="1hm-1Z-rUq" firstAttribute="leading" secondItem="Aje-AL-YM0" secondAttribute="trailing" constant="64" id="KU6-xo-7hY"/>
+                                    <constraint firstItem="9Iz-UL-b1g" firstAttribute="leading" secondItem="Aje-AL-YM0" secondAttribute="leading" id="MSe-B6-TXb"/>
+                                    <constraint firstItem="9Iz-UL-b1g" firstAttribute="top" secondItem="Aje-AL-YM0" secondAttribute="bottom" constant="23" id="NY0-Jz-RxV"/>
+                                    <constraint firstAttribute="trailing" secondItem="1hm-1Z-rUq" secondAttribute="trailing" constant="28" id="P3P-lq-lZI"/>
+                                    <constraint firstItem="cae-fa-2KW" firstAttribute="bottom" secondItem="6uQ-By-OOD" secondAttribute="bottomMargin" id="Ppw-cB-Td7"/>
+                                    <constraint firstItem="1hm-1Z-rUq" firstAttribute="height" secondItem="MPX-dW-i84" secondAttribute="height" id="Vp6-3y-D4Q"/>
+                                    <constraint firstItem="9Iz-UL-b1g" firstAttribute="leading" secondItem="6uQ-By-OOD" secondAttribute="leading" id="Wx2-St-Jlw"/>
+                                    <constraint firstItem="MPX-dW-i84" firstAttribute="top" secondItem="1hm-1Z-rUq" secondAttribute="bottom" constant="8" symbolic="YES" id="ZSd-Fv-8yj"/>
+                                    <constraint firstItem="psY-Gh-qMq" firstAttribute="top" secondItem="9Iz-UL-b1g" secondAttribute="bottom" constant="36" id="dXg-JJ-bYM"/>
+                                    <constraint firstItem="Aje-AL-YM0" firstAttribute="height" secondItem="9Iz-UL-b1g" secondAttribute="height" id="mLF-ix-dRG"/>
+                                    <constraint firstItem="MPX-dW-i84" firstAttribute="trailing" secondItem="ejA-KJ-V2p" secondAttribute="trailing" id="pA5-c9-O48"/>
+                                    <constraint firstItem="1hm-1Z-rUq" firstAttribute="leading" secondItem="MPX-dW-i84" secondAttribute="leading" id="sOt-vK-74U"/>
+                                    <constraint firstItem="1hm-1Z-rUq" firstAttribute="width" secondItem="MPX-dW-i84" secondAttribute="width" id="v6i-qF-tDV"/>
+                                    <constraint firstItem="ejA-KJ-V2p" firstAttribute="top" secondItem="psY-Gh-qMq" secondAttribute="top" id="zdB-78-ArF"/>
+                                    <constraint firstItem="1hm-1Z-rUq" firstAttribute="top" secondItem="6uQ-By-OOD" secondAttribute="top" id="zpf-iU-bIs"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="resign:" destination="3Kq-9p-Xdx" eventType="touchUpInside" id="nSM-tq-344"/>
+                                    <action selector="tapView:" destination="3Kq-9p-Xdx" eventType="touchUpInside" id="Ivw-ta-Lcq"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6uQ-By-OOD" firstAttribute="centerY" secondItem="6C0-JI-oiu" secondAttribute="centerY" id="ACq-CC-U9b"/>
+                            <constraint firstItem="6uQ-By-OOD" firstAttribute="centerX" secondItem="6C0-JI-oiu" secondAttribute="centerX" id="RD3-mW-liA"/>
+                            <constraint firstItem="6uQ-By-OOD" firstAttribute="leading" secondItem="6C0-JI-oiu" secondAttribute="leading" constant="126" id="lg1-26-eJo"/>
+                            <constraint firstItem="6uQ-By-OOD" firstAttribute="top" secondItem="paU-Yi-h4N" secondAttribute="bottom" constant="211" id="qbR-3R-yo7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loginButton" destination="psY-Gh-qMq" id="skL-4t-wBS"/>
+                        <outlet property="loginLabel" destination="9Iz-UL-b1g" id="HQF-Ky-Q5x"/>
+                        <outlet property="loginTextField" destination="MPX-dW-i84" id="6ug-89-faU"/>
+                        <outlet property="password" destination="6uQ-By-OOD" id="qnM-mQ-C92"/>
+                        <outlet property="serret" destination="MPX-dW-i84" id="lGl-3c-SsK"/>
+                        <outlet property="user" destination="1hm-1Z-rUq" id="d0M-D4-3Q2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AuI-aU-aak" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="332" y="237"/>
+        </scene>
+    </scenes>
+</document>
