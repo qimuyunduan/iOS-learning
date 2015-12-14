@@ -9,7 +9,7 @@
 import UIKit
 
 
-class ViewController2:UIViewController {
+class LoginViewController:UIViewController {
     
   
     @IBOutlet var user: UITextField!

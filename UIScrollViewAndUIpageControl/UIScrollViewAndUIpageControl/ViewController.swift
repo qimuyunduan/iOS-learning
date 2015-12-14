@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController,UIScrollViewDelegate {
-
+    
     
     
     let imageScroll = UIScrollView()
@@ -39,16 +39,16 @@ class ViewController: UIViewController,UIScrollViewDelegate {
         button.backgroundColor = UIColor.blueColor()
         button.setTitle("进入体验", forState: UIControlState.Normal)
         button.alpha = 0.0
-        button.addTarget(self, action: "enterApp:", forControlEvents: UIControlEvents.TouchUpInside)
+        button.addTarget(self, action: "enterApp", forControlEvents: UIControlEvents.TouchUpInside)
         for i in 0..<3 {
-        
-        let image = UIImage(named: "\(i+1).png")
+            
+            let image = UIImage(named: "\(i+1).png")
             let myImageView = UIImageView(frame:CGRectMake(self.view.frame.width * CGFloat(i) , 0, self.view.frame.width, self.view.frame.height))
             myImageView.image = image
             imageScroll.addSubview(myImageView)
-        
-        
-        
+            
+            
+            
         }
         
         
@@ -63,29 +63,29 @@ class ViewController: UIViewController,UIScrollViewDelegate {
         
     }
     
-    func enterApp(sender:UIButton) {
-    
+    func enterApp() {
+        
         let loginStory = UIStoryboard(name: "App", bundle:nil)
         
-        let loginViewController = loginStory.instantiateViewControllerWithIdentifier("app") as! ViewController2
+        let loginViewController = loginStory.instantiateViewControllerWithIdentifier("app") as! LoginViewController
         
-       self.presentViewController(loginViewController, animated: true, completion: nil)
-
-    
-    
+        self.presentViewController(loginViewController, animated: true, completion: nil)
+        
+        
+        
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
-    
-    let currentPage = Int(scrollView.contentOffset.x/self.view.bounds.width)
         
-    pageControl.currentPage = currentPage
+        let currentPage = Int(scrollView.contentOffset.x/self.view.bounds.width)
+        
+        pageControl.currentPage = currentPage
         print(currentPage)
         
         if currentPage == 2 {
             UIView.animateWithDuration(0.5)
-           {
-             self.button.alpha = 1.0
+                {
+                    self.button.alpha = 1.0
             }
             
         }
@@ -93,7 +93,7 @@ class ViewController: UIViewController,UIScrollViewDelegate {
             
             self.button.alpha = 0.0
         }
-    
+        
     }
     
     
@@ -105,12 +105,12 @@ class ViewController: UIViewController,UIScrollViewDelegate {
         initScrollView()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
 
