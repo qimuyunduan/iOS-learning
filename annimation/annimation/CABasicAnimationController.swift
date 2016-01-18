@@ -22,6 +22,7 @@ class CABasicAnimationController: UIViewController {
         image.alpha = 0.0
     }
     //开启 clip subview 属性
+    //逐渐变大
     @IBAction func cabExpend(sender: UIButton) {
         let animation = CABasicAnimation(keyPath: "bounds.size")
         animation.fromValue = NSValue(CGSize:CGSizeMake(2.0, 2.0))
