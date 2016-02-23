@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Localization" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fSb-yA-I1g">
+                                <rect key="frame" x="180" y="189" width="240" height="222"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="V4b-ib-KXg"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VKZ-Wj-sT1">
+                                <rect key="frame" x="180" y="480" width="240" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fSb-yA-I1g" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="169" id="5CX-gt-76W"/>
+                            <constraint firstItem="fSb-yA-I1g" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DKd-7t-3Bq"/>
+                            <constraint firstItem="fSb-yA-I1g" firstAttribute="centerX" secondItem="VKZ-Wj-sT1" secondAttribute="centerX" id="HfW-v6-kWI"/>
+                            <constraint firstItem="VKZ-Wj-sT1" firstAttribute="top" secondItem="fSb-yA-I1g" secondAttribute="bottom" constant="69" id="XTE-BF-k1C"/>
+                            <constraint firstItem="fSb-yA-I1g" firstAttribute="leading" secondItem="VKZ-Wj-sT1" secondAttribute="leading" id="rRM-M4-4ji"/>
+                            <constraint firstItem="fSb-yA-I1g" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="zP9-fx-0gE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="myImage" destination="fSb-yA-I1g" id="9w6-xB-hfI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="313" y="330"/>
+        </scene>
+    </scenes>
+</document>
