@@ -52,6 +52,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         - parameter sender: 被携带的信息
         */
         self.performSegueWithIdentifier("showDetailView", sender: itemValue)
+        print("跳转.....")
     }
     /**
      segue 跳转前准备工作
@@ -64,6 +65,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             /// 设置segue的目的控制器
             let desController = segue.destinationViewController as! DetailViewController
             desController.itemValue  = sender as? String
+            print("准备跳转.....")
         }
     }
     override func didReceiveMemoryWarning() {
