@@ -22,7 +22,7 @@ class ViewController: UIViewController,ChatDataSource {
         self.tableView!.registerClass(TableViewCell.self,forCellReuseIdentifier:"MSGCell")
         let me = "11.png"
         let talker = "5.jpg"
-        let one =  MessageItem(body:"嘿，这张照片咋样，我周末拍的呢！", logo:me,
+        let one =  MessageItem(body:"嘿，这张照片咋样，我周末拍的呢！这张照片咋样，我周末拍的呢！", logo:me,
             date:NSDate(timeIntervalSinceNow:-600), mtype:ChatType.Mine)
         
         let two =  MessageItem(image:UIImage(named:"11.png")!,logo:me,

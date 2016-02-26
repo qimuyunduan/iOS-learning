@@ -16,7 +16,7 @@
           "bottom" : 7,
           "top" : 1,
           "right" : 0,
-          "left" : 1
+          "left" : 0
         }
       },
       "idiom" : "universal",
@@ -28,14 +28,14 @@
         "mode" : "9-part",
         "center" : {
           "mode" : "tile",
-          "width" : 196,
+          "width" : 1,
           "height" : 39
         },
         "cap-insets" : {
           "bottom" : 7,
           "top" : 4,
           "right" : 2,
-          "left" : 2
+          "left" : 1
         }
       },
       "idiom" : "universal",

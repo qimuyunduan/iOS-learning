@@ -8,7 +8,7 @@
 
 import UIKit
 class TableViewCell : UITableViewCell {
-   
+    
     //消息背景
     var contentBackgroundImage : UIImageView!
     //头像
@@ -23,18 +23,19 @@ class TableViewCell : UITableViewCell {
     }
     
     init(data:MessageItem,reuseIdentifier cellID:String) {
-    
+        
         self.message = data
         super.init(style: UITableViewCellStyle.Default, reuseIdentifier: cellID)
         rebuildUserInterface()
         
     }
     func rebuildUserInterface() {
-        self.selectionStyle = UITableViewCellSelectionStyle.Blue
+        self.selectionStyle = UITableViewCellSelectionStyle.Gray
         if (contentBackgroundImage == nil) {
-        
+            
             contentBackgroundImage = UIImageView()
-                    }
+            self.addSubview(contentBackgroundImage)
+        }
         //消息类型
         let type = message.mtype
         //消息的宽度
@@ -65,23 +66,23 @@ class TableViewCell : UITableViewCell {
             let delta = self.frame.size.height - (self.message.insets.top+self.message.insets.bottom+self.message.view.frame.height)
             //设置消息内容框的y坐标
             if delta > 0 {
-            
+                
                 y = delta
                 
-            
+                
             }
             //设置消息内容框x的坐标
             if (type == ChatType.talker) {
-            
+                
                 x += 54
-            
+                
             }
             if (type == ChatType.Mine) {
-            
+                
                 x -= 54
             }
             
-        
+            
         }
         //设置具体消息消息内容的坐标
         self.chatContentView = self.message.view
@@ -90,16 +91,18 @@ class TableViewCell : UITableViewCell {
         
         //如果是别人的消息 在左边，如果是我输入的消息 在右边
         if (type == ChatType.talker) {
-        
-            self.contentBackgroundImage.image = UIImage(named: "chat.png")?.stretchableImageWithLeftCapWidth(21, topCapHeight: 14)
             
-        
+            self.contentBackgroundImage.image = UIImage(named: "chat.png")!.stretchableImageWithLeftCapWidth(21, topCapHeight: 14)
+            
+            
         }
         else {
-            self.contentBackgroundImage.image = UIImage(named: "chat.png")?.stretchableImageWithLeftCapWidth(15, topCapHeight: 14)
-        
+            self.contentBackgroundImage.image = UIImage(named: "chat.png")!.stretchableImageWithLeftCapWidth(15, topCapHeight: 14)
+            
         }
+        
         self.contentBackgroundImage.frame = CGRectMake(x, y, width+self.message.insets.left+self.message.insets.right, height+self.message.insets.top+self.message.insets.bottom)
-    
+        
+        
     }
 }

@@ -47,7 +47,7 @@ class TableView : UITableView,UITableViewDataSource,UITableViewDelegate {
         super.init(frame: frame, style: style)
         self.chatSections = Array<MessageItem>()
         self.backgroundColor = UIColor.clearColor()
-        self.separatorStyle = UITableViewCellSeparatorStyle.None
+        self.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
         self.dataSource = self
         self.delegate = self
     }

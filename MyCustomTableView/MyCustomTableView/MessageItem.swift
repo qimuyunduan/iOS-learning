@@ -58,15 +58,16 @@ class MessageItem {
     convenience init(body:NSString,logo:String,date:NSDate,mtype:ChatType) {
         
         let font = UIFont.boldSystemFontOfSize(12)
-        let width = 225, height = 10000.0
+        let width = 225, height = 0
         let atts = [NSFontAttributeName:font]
         let size = body.boundingRectWithSize(CGSizeMake(CGFloat(width), CGFloat(height)), options: .UsesLineFragmentOrigin, attributes: atts, context: nil)
         let label = UILabel(frame: CGRectMake(0,0,size.size.width,size.size.height))
+        print(""+String(size.size.width)+"\n"+String(size.size.height))
         label.numberOfLines = 0
         label.lineBreakMode = NSLineBreakMode.ByWordWrapping
         label.text = (body.length != 0 ? body as String : "")
         label.font = font
-        label.backgroundColor = UIColor.clearColor()
+        label.backgroundColor = UIColor.lightGrayColor()
         let insets:UIEdgeInsets = (mtype == ChatType.Mine ? MessageItem.getTextInsetsMine() : MessageItem.getTextInsetsTalker())
         self.init(logo:logo,date:date,mtype:mtype,view:label,insets:insets)
         
