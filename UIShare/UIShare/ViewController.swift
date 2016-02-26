@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         Button = UIButton(type: UIButtonType.System)
         Button!.frame = CGRectMake(0, statusBarHeight, 60, 30)
         Button!.setTitle("分享", forState: UIControlState.Normal)
-        Button!.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
+        Button!.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal) 
         Button!.layer.borderColor = UIColor.lightGrayColor().CGColor
         Button!.layer.borderWidth = 1.0
         Button!.titleLabel?.textAlignment = NSTextAlignment.Center
