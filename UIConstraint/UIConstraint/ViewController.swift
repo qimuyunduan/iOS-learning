@@ -24,11 +24,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
-        
-        
+        initView()
+        setConstraintsForViews()
+        adjustImage()
+   
         // Do any additional setup after loading the view, typically from a nib.
     }
     func initView() {
@@ -56,26 +55,39 @@ class ViewController: UIViewController {
         
     }
     func setConstraintsForViews() {
-        
+        //为psw设置约束
         let pswCons1 = NSLayoutConstraint(item: psw, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: login, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 20)
         let pswCons2 = NSLayoutConstraint(item: psw, attribute: NSLayoutAttribute.Left, relatedBy: NSLayoutRelation.Equal, toItem: login, attribute: NSLayoutAttribute.Left, multiplier: 1, constant: 0)
         psw.addConstraints([pswCons1,pswCons2])
+        //为loginPsw设置约束
         let loginPswCons1 = NSLayoutConstraint(item: loginPsw, attribute: NSLayoutAttribute.Right, relatedBy: NSLayoutRelation.Equal, toItem: login, attribute: NSLayoutAttribute.Right, multiplier: 1, constant: 0)
         let loginPswCons2 = NSLayoutConstraint(item: loginPsw, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: psw, attribute: NSLayoutAttribute.Height, multiplier: 1, constant: 0)
         let loginPswCon3 = NSLayoutConstraint(item: loginPsw, attribute: NSLayoutAttribute.Left, relatedBy: NSLayoutRelation.Equal, toItem: psw, attribute: NSLayoutAttribute.Right, multiplier: 1, constant: 20)
-        loginPsw.addConstraints([loginPswCons1,loginPswCons2,loginPswCon3])
+        let loginPswCon4 = NSLayoutConstraint(item: loginPsw, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: psw, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
+        
+        loginPsw.addConstraints([loginPswCons1,loginPswCons2,loginPswCon3,loginPswCon4])
+        //为name设置约束
         let nameCons1 = NSLayoutConstraint(item: name, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: psw, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 10)
         let nameCons2 = NSLayoutConstraint(item: name, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: psw, attribute: NSLayoutAttribute.Width, multiplier: 1, constant: 0)
         let nameCons3 = NSLayoutConstraint(item: name, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: psw, attribute: NSLayoutAttribute.Height, multiplier: 1, constant: 0)
         let nameCons4 = NSLayoutConstraint(item: name, attribute: NSLayoutAttribute.Left, relatedBy: NSLayoutRelation.Equal, toItem: psw, attribute: NSLayoutAttribute.Left, multiplier: 1, constant: 0)
         name.addConstraints([nameCons1,nameCons2,nameCons3,nameCons4])
-        
-        
-        
-        
-
-        
-        
+        //为loginName设置约束
+        let loginNameCons1 = NSLayoutConstraint(item: loginName, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: loginPsw, attribute: NSLayoutAttribute.Width, multiplier: 1, constant: 0)
+        let loginNameCons2 = NSLayoutConstraint(item: loginName, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: loginPsw, attribute: NSLayoutAttribute.Height, multiplier: 1, constant: 0)
+        let loginNameCons3 = NSLayoutConstraint(item: loginName, attribute: NSLayoutAttribute.Right, relatedBy: NSLayoutRelation.Equal, toItem: loginPsw, attribute: NSLayoutAttribute.Right, multiplier: 1, constant: 0)
+        let loginNameCons4 = NSLayoutConstraint(item: loginName, attribute: NSLayoutAttribute.Left, relatedBy: NSLayoutRelation.Equal, toItem: loginPsw, attribute: NSLayoutAttribute.Left, multiplier: 1, constant: 0)
+        let loginNameCons5 = NSLayoutConstraint(item: loginName, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: name, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
+        loginName.addConstraints([loginNameCons1,loginNameCons2,loginNameCons3,loginNameCons4,loginNameCons5])
+    
+    }
+    /**
+     调整image位置
+     */
+    func adjustImage() {
+    
+        image.center.x = self.view.center.x
+        image.center.y = name.center.y-60
     
     
     }
