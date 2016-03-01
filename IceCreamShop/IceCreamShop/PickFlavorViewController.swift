@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import MBProgressHUD
 
 
 public class PickFlavorViewController: UIViewController, UICollectionViewDelegate {
@@ -38,29 +39,38 @@ public class PickFlavorViewController: UIViewController, UICollectionViewDelegat
   
   public override func viewDidLoad() {
     
-    super.viewDidLoad()    
+    super.viewDidLoad()
     loadFlavors()
   }
   
-  private func loadFlavors() {
+  
+  func showLoadingHUD() {
+    let hud = MBProgressHUD.showHUDAddedTo(contentView, animated: true)
+    hud.labelText = "Loading..."}
+  
+  func hideLoadingHUD() {
+    MBProgressHUD.hideAllHUDsForView(contentView, animated: true)
+  }
+  func loadFlavors() {
+    let urlString = "http://www.raywenderlich.com/downloads/Flavors.plist"
     
-    let urlString = "http://www.raywenderlich.com/downloads/Flavors.plist"   // 1
+       showLoadingHUD()
+    
     Alamofire.request(.GET, urlString, encoding: .PropertyList(.XMLFormat_v1_0, 0))
-      .responsePropertyList { request, response, array, error in     // 2
-        if let error = error {
-          println("Error: \(error)")     // 3
-        } else if let array = array as? [[String: String]] {       // 4
+      .responsePropertyList {
+        array in     // 2
+        if let array = array as? [[String: String]] {       // 4
           if array.isEmpty {
-            println("No flavors were found!")       // 5
+            print("No flavors were found!")       // 5
           } else {
             self.flavors = self.flavorFactory.flavorsFromDictionaryArray(array)
             self.collectionView.reloadData()
             self.selectFirstFlavor()
           }
         }
-    }  }
-  
-  private func selectFirstFlavor() {
+    }
+  }
+  func selectFirstFlavor() {
     
     if let flavor = flavors.first {
       updateWithFlavor(flavor)
@@ -77,7 +87,7 @@ public class PickFlavorViewController: UIViewController, UICollectionViewDelegat
   
   // MARK: Internal
   
-  private func updateWithFlavor(flavor: Flavor) {
+  func updateWithFlavor(flavor: Flavor) {
     
     iceCreamView.updateWithFlavor(flavor)
     label.text = flavor.name
