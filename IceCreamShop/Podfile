@@ -1,0 +1,7 @@
+platform :ios, "8.1"
+use_frameworks!
+
+
+target :'IceCreamShop', :exclusive => true do
+pod 'Alamofire','~> 2.0'
+end

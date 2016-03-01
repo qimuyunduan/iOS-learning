@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F99D687E1C8470AA009784A2 /* 11.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F99D687D1C8470AA009784A2 /* 11.jpg */; };
 		F9FD49DA1C80866400E60A49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FD49D91C80866400E60A49 /* AppDelegate.swift */; };
 		F9FD49DC1C80866400E60A49 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FD49DB1C80866400E60A49 /* ViewController.swift */; };
 		F9FD49DF1C80866400E60A49 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9FD49DD1C80866400E60A49 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F99D687D1C8470AA009784A2 /* 11.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 11.jpg; path = ../../../11.jpg; sourceTree = "<group>"; };
 		F9FD49D61C80866400E60A49 /* UIConstraint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIConstraint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9FD49D91C80866400E60A49 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9FD49DB1C80866400E60A49 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 				F9FD49DB1C80866400E60A49 /* ViewController.swift */,
 				F9FD49DD1C80866400E60A49 /* Main.storyboard */,
 				F9FD49E01C80866400E60A49 /* Assets.xcassets */,
+				F99D687D1C8470AA009784A2 /* 11.jpg */,
 				F9FD49E21C80866400E60A49 /* LaunchScreen.storyboard */,
 				F9FD49E51C80866500E60A49 /* Info.plist */,
 			);
@@ -125,6 +128,7 @@
 				F9FD49E41C80866500E60A49 /* LaunchScreen.storyboard in Resources */,
 				F9FD49E11C80866400E60A49 /* Assets.xcassets in Resources */,
 				F9FD49DF1C80866400E60A49 /* Main.storyboard in Resources */,
+				F99D687E1C8470AA009784A2 /* 11.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +254,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = UIConstraint/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qimuyunduan.UIConstraint;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -261,6 +266,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = UIConstraint/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qimuyunduan.UIConstraint;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -286,6 +292,7 @@
 				F9FD49EA1C80866500E60A49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
