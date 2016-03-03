@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '6CF551EBEC29FC7E5602813F'
+               BlueprintIdentifier = 'FC1F3CD4A1B87AFB7C29E354'
                BlueprintName = 'Pods-IceCreamShop'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_IceCreamShop.framework'>
