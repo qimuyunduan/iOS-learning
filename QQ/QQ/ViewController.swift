@@ -28,6 +28,8 @@ class ViewController: UIViewController {
     }
     //菜单打开后主页在屏幕右侧露出部分的宽度
     let menuViewExpandedOffset :CGFloat = 60
+    //侧滑开始时，菜单视图起始的偏移量
+    let menuViewStartoffset:CGFloat = 70
     //侧滑菜单黑色半透明遮罩层
     var blackCover:UIView?
     //最小缩放比例
@@ -57,7 +59,7 @@ class ViewController: UIViewController {
         mainNavigationController.view.addGestureRecognizer(panGes)
         
         //单击收起菜单手势
-        let tapGes = UITapGestureRecognizer(target: self, action: "handlepanGesture:")
+        let tapGes = UITapGestureRecognizer(target: self, action: "handleTapGesture:")
         mainNavigationController.view.addGestureRecognizer(tapGes)
         
         
@@ -106,8 +108,8 @@ class ViewController: UIViewController {
             
             }
             //计算缩放比例
-            var proportion:CGFloat = (centerX - screenWidth/2) / (view.bounds.size.width - menuViewExpandedOffset)
-            proportion = 1 - (1 - minProportion) * proportion
+            let percent:CGFloat = (centerX - screenWidth/2) / (view.bounds.size.width - menuViewExpandedOffset)
+           let   proportion = 1 - (1 - minProportion) * percent
             
             //执行视觉特效
             blackCover?.alpha = (proportion - minProportion) / (1 - minProportion)
@@ -118,7 +120,15 @@ class ViewController: UIViewController {
             //缩放主页面
             
             recognizer.view?.transform = CGAffineTransformScale(CGAffineTransformIdentity, proportion, proportion)
+            //菜单视图移动
+            menuViewController.view.center.x = screenWidth/2 - menuViewStartoffset * (1-percent)
+            //菜单视图缩放
+            let menuProportion = (1+minProportion)-proportion
+            self.menuViewController?.view.transform = CGAffineTransformScale(CGAffineTransformIdentity,menuProportion,menuProportion)
+            
+            
             //滑动结束
+            
         case .Ended:
             //根据页面滑动是否过半，判断后面是自动展开还是收缩
             let hasMovedHalfway = recognizer.view?.center.x > view.bounds.size.width
@@ -132,7 +142,7 @@ class ViewController: UIViewController {
     
     //单击手势响应
     
-    func handlePanGesture() {
+    func handleTapGesture() {
     
     
         //如果菜单是展开的点击主页部分则会收起
@@ -142,6 +152,7 @@ class ViewController: UIViewController {
         }
     
     }
+  
     //添加菜单页
     func addMenuViewController() {
     
@@ -167,7 +178,41 @@ class ViewController: UIViewController {
     
         //如果是用来展开
         if shouldExpand {
+            //更新当前状态
+            currentState = .Expanded
+            //动画
+            let mainPosition = view.bounds.size.width * (1+minProportion/2)-menuViewExpandedOffset
+            
+            doTheAnimate(mainPosition, mainProportion: minProportion,menuPosition: view.bounds.size.width/2,menuProportion: 1, blackCoverAlpha: 0)
+
+        }
+            //如果是用于隐藏
+        else {
         
+            //动画
+            
+            let menuPosition = view.bounds.size.width/2 * (1-(1-minProportion)/2)-menuViewStartoffset
+            
+            doTheAnimate(view.bounds.size.width/2, mainProportion: 1, menuPosition:menuPosition,menuProportion:minProportion,blackCoverAlpha: 1, completion: {
+            
+                finished in
+                //动画结束之后更新状态
+                self.currentState = .Collapsed
+                
+                //移除左侧视图
+                self.menuViewController.view.removeFromSuperview()
+                
+                //释放内存
+                //MARK: 很重要.......
+                self.menuViewController = nil
+                //移除黑色遮罩层
+                self.blackCover?.removeFromSuperview()
+                
+                //释放内存
+                self.blackCover = nil
+
+            
+            })
         
         
         }
@@ -176,9 +221,9 @@ class ViewController: UIViewController {
     }
     
     
-    //主页移动动画，黑色遮罩层动画
+    //主页移动动画，黑色遮罩层动画,菜单页移动动画
     
-    func doTheAnimate(mainPosition:CGFloat,mainProportion:CGFloat,blackCoverAlpha:CGFloat,completion:((Bool) -> Void)! = nil) {
+    func doTheAnimate(mainPosition:CGFloat,mainProportion:CGFloat,menuPosition:CGFloat,menuProportion:CGFloat,blackCoverAlpha:CGFloat,completion:((Bool) -> Void)! = nil) {
     
     //1.0 表示没有弹簧震动画面
         UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0, options: .CurveEaseInOut, animations: {
@@ -187,7 +232,10 @@ class ViewController: UIViewController {
             self.blackCover?.alpha = blackCoverAlpha
             //缩放主页面
             self.mainNavigationController.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, mainProportion, mainProportion)
-            
+            //菜单页移动
+            self.menuViewController.view.center.x = menuPosition
+            //菜单页缩放
+            self.menuViewController.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, menuProportion, menuProportion)
             
             }, completion: completion)
     
