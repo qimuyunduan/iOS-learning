@@ -10,16 +10,36 @@ import UIKit
 
 class MenuViewController: UIViewController , UITableViewDelegate, UITableViewDataSource{
     
-    let titlesDictionary = ["开通会员", "QQ钱包", "网上营业厅", "个性装扮", "我的收藏", "我的相册"]
+    
+    @IBOutlet weak var name: UILabel!
+    
+    @IBOutlet weak var qianMing: UILabel!
+    
+    @IBOutlet weak var personImage: UIImageView!
     
     @IBOutlet weak var settingTableView: UITableView!
     
+    
+    let titlesDictionary = ["开通会员", "QQ钱包", "网上营业厅", "个性装扮", "我的收藏", "我的相册"]
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        name.text = "小小炊烟"
+        name.textAlignment = NSTextAlignment.Center
+        name.font = UIFont.boldSystemFontOfSize(16)
+        qianMing.textAlignment = NSTextAlignment.Center
+        qianMing.textColor = UIColor.grayColor()
+        qianMing.font = UIFont.systemFontOfSize(14)
+        personImage.layer.cornerRadius = 30
+        personImage.layer.borderWidth = 1
+        personImage.layer.borderColor = UIColor.whiteColor().CGColor
         settingTableView.delegate = self
         settingTableView.dataSource = self
-        settingTableView.tableFooterView = UIView()
+        settingTableView.backgroundColor = UIColor.blueColor()
+        settingTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+       
         
     }
     
@@ -37,11 +57,12 @@ class MenuViewController: UIViewController , UITableViewDelegate, UITableViewDat
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("menuViewCell", forIndexPath: indexPath)
-        
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell")! as UITableViewCell
+        cell.accessoryType = UITableViewCellAccessoryType.None
         cell.backgroundColor = UIColor.clearColor()
         cell.textLabel!.text = titlesDictionary[indexPath.row]
-        
+        cell.textLabel?.textColor = UIColor.whiteColor()
+        cell.imageView?.image = UIImage(named: "avator")
         return cell
     }
     
@@ -51,14 +72,6 @@ class MenuViewController: UIViewController , UITableViewDelegate, UITableViewDat
     }
     
     
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-    }
-    */
+  
     
 }

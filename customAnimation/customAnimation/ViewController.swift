@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         CGPathMoveToPoint(path, &transform, 0, 0)
         CGPathAddLineToPoint(path, &transform, 0, 75)
         CGPathAddLineToPoint(path, &transform, 75, 75)
-        CGPathAddArc(path, &transform, 0, 75, 75, 0, CGFloat(1.5 * M_PI), false)
+        CGPathAddArc(path, &transform, 0, 75, 75, 0, CGFloat(1.5 * M_PI), true)
         
         //旋转动画
         let rotateAnimation = CAKeyframeAnimation(keyPath: "transform.rotation.z")

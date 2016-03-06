@@ -1,15 +1,15 @@
 //
-//  MainViewController.swift
+//  ContactController.swift
 //  QQ
 //
-//  Created by qimuyunduan on 16/3/4.
+//  Created by qimuyunduan on 16/3/6.
 //  Copyright © 2016年 qimuyunduan. All rights reserved.
 //
 
+
 import UIKit
 
-
-class MainViewController: UIViewController {
+class ContactController: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,5 @@ class MainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-   
     
 }
