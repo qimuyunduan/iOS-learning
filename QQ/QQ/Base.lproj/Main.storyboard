@@ -3,12 +3,13 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Title-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="recent" id="BYZ-38-t0r" customClass="RecentController" customModule="QQ" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,9 +17,37 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8MQ-OI-GJZ">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <connections>
+                                    <segue destination="3vF-MW-ffp" kind="embed" id="PH3-Lr-Wgh"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4mv-gF-Mpf">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <connections>
+                                    <segue destination="Ulc-pk-TBw" kind="embed" id="dgw-yC-ERy"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="8MQ-OI-GJZ" secondAttribute="trailing" constant="-20" id="1IG-GQ-xub"/>
+                            <constraint firstItem="4mv-gF-Mpf" firstAttribute="width" secondItem="8MQ-OI-GJZ" secondAttribute="width" id="Cd5-N8-eFG"/>
+                            <constraint firstItem="8MQ-OI-GJZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="R9a-EI-bSr"/>
+                            <constraint firstItem="8MQ-OI-GJZ" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="TZL-Wr-aid"/>
+                            <constraint firstItem="4mv-gF-Mpf" firstAttribute="leading" secondItem="8MQ-OI-GJZ" secondAttribute="leading" id="VDl-t3-TgH"/>
+                            <constraint firstItem="8MQ-OI-GJZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="mru-WF-iHO"/>
+                            <constraint firstItem="4mv-gF-Mpf" firstAttribute="top" secondItem="8MQ-OI-GJZ" secondAttribute="top" id="nYd-si-OrT"/>
+                            <constraint firstItem="4mv-gF-Mpf" firstAttribute="height" secondItem="8MQ-OI-GJZ" secondAttribute="height" id="tk6-OT-mPC"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="6VN-zA-fFv"/>
+                    <connections>
+                        <outlet property="messageContainerView" destination="8MQ-OI-GJZ" id="ZL5-mb-dPa"/>
+                        <outlet property="phoneContainView" destination="4mv-gF-Mpf" id="l33-wi-MUs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -47,17 +76,17 @@
                             <outlet property="delegate" destination="U4r-jn-EBZ" id="Jpc-qn-SLO"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="i6d-ZH-sAv"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="i6d-ZH-sAv" customClass="mo"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sqP-D7-gbm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1158" y="1441"/>
+            <point key="canvasLocation" x="1118" y="1925"/>
         </scene>
-        <!--More Controller-->
+        <!--Navigation Controller-->
         <scene sceneID="T6b-wo-DD0">
             <objects>
-                <navigationController id="m0A-CP-e10" customClass="MoreController" customModule="QQ" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" tag="2" systemItem="more" id="F4r-B0-CTu"/>
+                <navigationController id="m0A-CP-e10" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" tag="2" systemItem="mostViewed" id="F4r-B0-CTu"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="MuV-YH-OqL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -68,12 +97,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oES-Fl-C9A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="164" y="1493"/>
+            <point key="canvasLocation" x="-15" y="1541"/>
         </scene>
-        <!--Recent Controller-->
+        <!--Navigation Controller-->
         <scene sceneID="RGI-zw-Fv1">
             <objects>
-                <navigationController storyboardIdentifier="mainNavigation" automaticallyAdjustsScrollViewInsets="NO" id="ONn-d4-JqX" customClass="RecentController" customModule="QQ" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="mainNavigation" automaticallyAdjustsScrollViewInsets="NO" id="ONn-d4-JqX" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="mostRecent" id="Gsv-W5-mvU"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JrT-gg-sAW">
@@ -92,7 +121,7 @@
         <!--Menu View Controller-->
         <scene sceneID="3He-b7-wFe">
             <objects>
-                <viewController storyboardIdentifier="menuView" id="hfc-b3-Ll8" customClass="MenuViewController" customModule="QQ" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="hfc-b3-Ll8" customClass="MenuViewController" customModule="QQ" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kPp-uv-zRd"/>
                         <viewControllerLayoutGuide type="bottom" id="DC1-dc-32S"/>
@@ -170,24 +199,6 @@
             <point key="canvasLocation" x="-1050" y="806"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="oFZ-wJ-kUS">
-            <objects>
-                <viewController id="NY3-f6-8BU" customClass="ViewController" customModule="QQ" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="qzY-vC-Mu2"/>
-                        <viewControllerLayoutGuide type="bottom" id="22i-go-Bhp"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="qaG-mm-YFG">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="k3B-QG-lHh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1060" y="1522"/>
-        </scene>
-        <!--View Controller-->
         <scene sceneID="OGr-qm-N04">
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="T6c-aj-3yK" customClass="ViewController" customModule="QQ" customModuleProvider="target" sceneMemberID="viewController">
@@ -209,7 +220,7 @@
         <!--Root View Controller-->
         <scene sceneID="aav-3d-0E1">
             <objects>
-                <tableViewController id="rsN-Fu-T25" sceneMemberID="viewController">
+                <tableViewController id="rsN-Fu-T25" customClass="ContactControlller" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="VG1-W5-mPU">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -235,10 +246,10 @@
             </objects>
             <point key="canvasLocation" x="1085" y="-250"/>
         </scene>
-        <!--Contact Controller-->
+        <!--Navigation Controller-->
         <scene sceneID="RwE-XM-1Fw">
             <objects>
-                <navigationController id="Jrl-wh-cT4" customClass="ContactController" customModule="QQ" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="Jrl-wh-cT4" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" tag="1" selectedImage="xingxing" systemItem="contacts" id="MVe-3x-mmV"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mic-53-VZk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -251,6 +262,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0SX-sP-U4o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="181" y="-256"/>
+        </scene>
+        <!--Message Controller-->
+        <scene sceneID="iQz-0q-inz">
+            <objects>
+                <viewController id="3vF-MW-ffp" customClass="MessageController" customModule="QQ" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BMB-bC-8pb"/>
+                        <viewControllerLayoutGuide type="bottom" id="b8z-ja-SUe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2Rs-kC-2Tn">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s0J-Ks-YTU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="610" y="1195.5"/>
+        </scene>
+        <!--Phone Controller-->
+        <scene sceneID="C1x-7j-Ufj">
+            <objects>
+                <viewController id="Ulc-pk-TBw" customClass="PhoneController" customModule="QQ" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MTK-Y6-JN5"/>
+                        <viewControllerLayoutGuide type="bottom" id="a06-89-yWg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hEc-Kh-2oV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iVw-g8-S71" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1519" y="1195.5"/>
         </scene>
     </scenes>
     <resources>

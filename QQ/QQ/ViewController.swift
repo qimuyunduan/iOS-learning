@@ -21,7 +21,7 @@ class ViewController: UITabBarController {
     var currentState = MenuState.Collapsed {
         didSet {
         
-        //菜单展开的时候，给主页面边缘添加阴影
+            //菜单展开的时候，给主页面边缘添加阴影
             let shouldShowShadow = currentState != .Collapsed
             showShadowForMainViewController(shouldShowShadow)
         }
@@ -45,57 +45,20 @@ class ViewController: UITabBarController {
         imageView.frame = UIScreen.mainScreen().bounds
         self.view.addSubview(imageView)
         
-        //初始化主视图
-        //TODO: add identifier
-        mainNavigationController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("mainNavigation") as! UINavigationController
-        
-        view.addSubview(mainNavigationController.view)
-        
-        //指定Navigation Bar 左侧按钮的事件
-        mainViewController = mainNavigationController.viewControllers.first as! MainViewController
-        mainViewController.navigationItem.leftBarButtonItem?.action = Selector("showMenu")
-        
-        //添加拖动手势
-        let panGes = UIPanGestureRecognizer(target: self, action: "handlePanGesture:")
-        mainNavigationController.view.addGestureRecognizer(panGes)
-        
-        //单击收起菜单手势
-        let tapGes = UITapGestureRecognizer(target: self, action: "handleTapGesture:")
-        mainNavigationController.view.addGestureRecognizer(tapGes)
-        
-        
-        
-        // Do any additional setup after loading the view, typically from a nnilib.
-    }
-        //导航栏左侧按钮事件响应
-    func showMenu() {
-    
-       //如果菜单是展开的则会收起，否则就展开
-        if currentState == .Expanded {
-        
-            animateMainView(false)
-        
-        }else {
-        
-            addMenuViewController()
-            animateMainView(true)
+                
         }
     
-    
-    }
-    
-    //拖动手势响应
-    func handlePanGesture(recognizer:UIPanGestureRecognizer) {
-    
-        switch(recognizer.state) {
+    func panGestureAction(recognizer:UIPanGestureRecognizer) {
         
+        switch(recognizer.state) {
+            
             //刚刚开始滑动
         case .Began:
             //判断拖动方向
             let dragFromLeftToRight = (recognizer.velocityInView(view).x > 0 )
             //如果刚刚开始滑动的时候还处在主页面，从左向右滑动加入侧面菜单
             if(currentState == .Collapsed && dragFromLeftToRight) {
-            
+                
                 currentState == .Expanding
                 addMenuViewController()
             }
@@ -106,11 +69,11 @@ class ViewController: UITabBarController {
             //页面滑到最左侧的话就不需要继续移动
             if centerX < screenWidth/2 {
                 centerX = screenWidth/2
-            
+                
             }
             //计算缩放比例
             let percent:CGFloat = (centerX - screenWidth/2) / (view.bounds.size.width - menuViewExpandedOffset)
-           let   proportion = 1 - (1 - minProportion) * percent
+            let   proportion = 1 - (1 - minProportion) * percent
             
             //执行视觉特效
             blackCover?.alpha = (proportion - minProportion) / (1 - minProportion)
@@ -136,47 +99,48 @@ class ViewController: UITabBarController {
             animateMainView(hasMovedHalfway)
         default:
             break
-        
-        }
-    
-    }
-    
-    //单击手势响应
-    
-    func handleTapGesture() {
-    
-    
-        //如果菜单是展开的点击主页部分则会收起
-        if currentState == .Expanded {
-        
-            animateMainView(false)
-        }
-    
-    }
-  
-    //添加菜单页
-    func addMenuViewController() {
-    
-        if menuViewController == nil {
-        //TODO:
-            menuViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("menuView") as? MenuViewController
-            //插入当前视图并置顶
-            view.insertSubview(menuViewController!.view, belowSubview: mainNavigationController.view)
-            //建立父子关系
-            addChildViewController(menuViewController)
-            menuViewController.didMoveToParentViewController(self)
             
-            //在侧滑菜单之上增加黑色遮罩层，目的是实现视觉特效
-            blackCover = UIView(frame: CGRectOffset(self.view.frame, 0, 0))
-            blackCover?.backgroundColor = UIColor.blackColor()
-            self.view.insertSubview(blackCover!, belowSubview: mainNavigationController.view)
         }
-    
-    
+
     }
+    //主页移动动画，黑色遮罩层动画,菜单页移动动画
+    
+    func doTheAnimate(mainPosition:CGFloat,mainProportion:CGFloat,menuPosition:CGFloat,menuProportion:CGFloat,blackCoverAlpha:CGFloat,completion:((Bool) -> Void)! = nil) {
+        
+        //1.0 表示没有弹簧震动画面
+        UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0, options: .CurveEaseInOut, animations: {
+            
+            self.mainNavigationController.view.center.x = mainPosition
+            self.blackCover?.alpha = blackCoverAlpha
+            //缩放主页面
+            self.mainNavigationController.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, mainProportion, mainProportion)
+            //菜单页移动
+            self.menuViewController.view.center.x = menuPosition
+            //菜单页缩放
+            self.menuViewController.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, menuProportion, menuProportion)
+            
+            }, completion: completion)
+
+    }
+    //给主页面边缘添加，取消阴影
+    
+    func showShadowForMainViewController(shouldShowShadow:Bool) {
+        
+        if shouldShowShadow {
+            
+            mainNavigationController.view.layer.shadowOpacity = 0.8
+            
+        }
+        else {
+            
+            mainNavigationController.view.layer.shadowOpacity = 0.0
+        }
+        
+    }
+    
     //主页自动展开，收起动画
     func animateMainView(shouldExpand:Bool) {
-    
+        
         //如果是用来展开
         if shouldExpand {
             //更新当前状态
@@ -185,17 +149,17 @@ class ViewController: UITabBarController {
             let mainPosition = view.bounds.size.width * (1+minProportion/2)-menuViewExpandedOffset
             
             doTheAnimate(mainPosition, mainProportion: minProportion,menuPosition: view.bounds.size.width/2,menuProportion: 1, blackCoverAlpha: 0)
-
+            
         }
             //如果是用于隐藏
         else {
-        
+            
             //动画
             
             let menuPosition = view.bounds.size.width/2 * (1-(1-minProportion)/2)-menuViewStartoffset
             
             doTheAnimate(view.bounds.size.width/2, mainProportion: 1, menuPosition:menuPosition,menuProportion:minProportion,blackCoverAlpha: 1, completion: {
-            
+                
                 finished in
                 //动画结束之后更新状态
                 self.currentState = .Collapsed
@@ -211,64 +175,69 @@ class ViewController: UITabBarController {
                 
                 //释放内存
                 self.blackCover = nil
-
-            
+                
+                
             })
-        
-        
-        }
-    
-    
-    }
-    
-    
-    //主页移动动画，黑色遮罩层动画,菜单页移动动画
-    
-    func doTheAnimate(mainPosition:CGFloat,mainProportion:CGFloat,menuPosition:CGFloat,menuProportion:CGFloat,blackCoverAlpha:CGFloat,completion:((Bool) -> Void)! = nil) {
-    
-    //1.0 表示没有弹簧震动画面
-        UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0, options: .CurveEaseInOut, animations: {
             
-            self.mainNavigationController.view.center.x = mainPosition
-            self.blackCover?.alpha = blackCoverAlpha
-            //缩放主页面
-            self.mainNavigationController.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, mainProportion, mainProportion)
-            //菜单页移动
-            self.menuViewController.view.center.x = menuPosition
-            //菜单页缩放
-            self.menuViewController.view.transform = CGAffineTransformScale(CGAffineTransformIdentity, menuProportion, menuProportion)
             
-            }, completion: completion)
-    
-    
-    
-    }
-    //给主页面边缘添加，取消阴影
-    
-    func showShadowForMainViewController(shouldShowShadow:Bool) {
-    
-        if shouldShowShadow {
-        
-            mainNavigationController.view.layer.shadowOpacity = 0.8
-        
         }
-        else {
         
-            mainNavigationController.view.layer.shadowOpacity = 0.0
-        }
-    
+        
     }
+    //添加菜单页
+    func addMenuViewController() {
+        
+        if menuViewController == nil {
+            //TODO:
+            menuViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("menuView") as? MenuViewController
+            //插入当前视图并置顶
+            view.insertSubview(menuViewController!.view, belowSubview: mainNavigationController.view)
+            //建立父子关系
+            addChildViewController(menuViewController)
+            menuViewController.didMoveToParentViewController(self)
+            
+            //在侧滑菜单之上增加黑色遮罩层，目的是实现视觉特效
+            blackCover = UIView(frame: CGRectOffset(self.view.frame, 0, 0))
+            blackCover?.backgroundColor = UIColor.blackColor()
+            self.view.insertSubview(blackCover!, belowSubview: mainNavigationController.view)
+        }
+        
+        
+    }
+    //打开菜单视图
+    func showMenuView() {
+        
+        //如果菜单是展开的则会收起，否则就展开
+        if currentState == .Expanded {
+            
+            animateMainView(false)
+            
+        }else {
+            
+            addMenuViewController()
+            animateMainView(true)
+        }
+        
+        
+        
+    }
+ 
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
     enum MenuState {
-    
-    case Collapsed
-    case Expanding
-    case Expanded
-    
+        
+        case Collapsed
+        case Expanding
+        case Expanded
+        
     }
+    
+   
 
 }
 
