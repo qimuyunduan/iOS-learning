@@ -35,6 +35,10 @@ class MessageController: UITableViewController {
         search = UISearchBar()
         search.placeholder = "please input something..."
         self.tableView.tableHeaderView = search
+        tableView.showsHorizontalScrollIndicator = false
+        tableView.showsVerticalScrollIndicator = false
+        tableView.separatorStyle = .SingleLine
+        tableView.separatorColor = UIColor.lightGrayColor()
         self.tableView.registerClass(RecentTableViewCell.self, forCellReuseIdentifier: "RecentCell")
         
         
@@ -45,14 +49,7 @@ class MessageController: UITableViewController {
         return 1
     }
     
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-        
-            messages.removeAtIndex(indexPath.row)
-            tableView.reloadData()
-        
-        }
-    }
+ 
    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     
@@ -66,19 +63,38 @@ class MessageController: UITableViewController {
      
     }
     
-    override func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
-        
-        UITableViewCellEditingStyle.Delete
-    }
+    
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        messages.count
+        return messages.count
     }
     
-    override func tableView(tableView: UITableView, titleForDeleteConfirmationButtonForRowAtIndexPath indexPath: NSIndexPath) -> String? {
-        return "删除"
+   
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        
+        let delete = UITableViewRowAction(style: .Default, title: "删除", handler: {
+         _,indexPath in
+            
+            self.messages.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+        
+        })
+        delete.backgroundColor = UIColor.yellowColor()
+        
+        let setToTop = UITableViewRowAction(style: .Default, title: "置顶", handler:{
+        _,indexPath in
+            let message = self.messages[indexPath.row]
+            self.messages.removeAtIndex(indexPath.row)
+            self.messages.insert(message, atIndex: 0)
+            tableView.moveRowAtIndexPath(indexPath, toIndexPath: NSIndexPath(index: 0))
+
+        })
+        setToTop.backgroundColor = UIColor.blueColor()
+        return [delete,setToTop]
+        
+        
+        
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

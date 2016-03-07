@@ -56,26 +56,7 @@
         <!--Root View Controller-->
         <scene sceneID="yCi-Qq-UpX">
             <objects>
-                <tableViewController id="U4r-jn-EBZ" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="l7g-mO-eG8">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="1SC-HF-BWQ">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1SC-HF-BWQ" id="smw-fs-nHr">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="U4r-jn-EBZ" id="ULD-WP-Hw4"/>
-                            <outlet property="delegate" destination="U4r-jn-EBZ" id="Jpc-qn-SLO"/>
-                        </connections>
-                    </tableView>
+                <tableViewController id="U4r-jn-EBZ" customClass="MoreViewController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="Root View Controller" id="i6d-ZH-sAv" customClass="mo"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sqP-D7-gbm" userLabel="First Responder" sceneMemberID="firstResponder"/>
