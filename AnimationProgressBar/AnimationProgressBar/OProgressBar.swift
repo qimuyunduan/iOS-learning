@@ -11,7 +11,7 @@ import UIKit
 @IBDesignable  class OProgressBar : UIView {
     
     struct Constant {
-         //进度条宽度
+        //进度条宽度
         static let lineWidth :CGFloat = 10
         //进度槽颜色
         static let trackColor = UIColor(red: 245/255, green: 245/255 ,blue: 245/255, alpha: 1.0)

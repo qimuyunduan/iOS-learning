@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,27 +17,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dq2-ix-zGX" customClass="OProgressBar" customModule="AnimationProgressBar" customModuleProvider="target">
-                                <rect key="frame" x="261" y="341" width="127" height="226"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G98-RB-GLz" customClass="OProgressBar" customModule="AnimationProgressBar" customModuleProvider="target">
-                                <rect key="frame" x="243" y="45" width="145" height="147"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PJx-uP-UcP">
-                                <rect key="frame" x="135" y="508" width="60" height="30"/>
+                                <rect key="frame" x="270" y="349" width="60" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="eKD-eb-nRh"/>
+                                </constraints>
                                 <state key="normal" title="增加进度"/>
                                 <connections>
                                     <action selector="addProgress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="haM-HZ-CVi"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ykN-3s-mCM" customClass="OProgressBar" customModule="AnimationProgressBar" customModuleProvider="target">
-                                <rect key="frame" x="232" y="200" width="167" height="188"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I4W-py-oke">
-                                <rect key="frame" x="435" y="513" width="60" height="30"/>
+                                <rect key="frame" x="270" y="458" width="60" height="58"/>
                                 <state key="normal" title="减少进度"/>
                                 <connections>
                                     <action selector="minusprogres:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gBN-Sf-2xn"/>
@@ -47,37 +37,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PJx-uP-UcP" secondAttribute="bottom" constant="62" id="1Yx-SU-07j"/>
-                            <constraint firstItem="PJx-uP-UcP" firstAttribute="top" secondItem="dq2-ix-zGX" secondAttribute="bottom" constant="-59" id="50B-Fu-cy6"/>
-                            <constraint firstItem="I4W-py-oke" firstAttribute="centerX" secondItem="dq2-ix-zGX" secondAttribute="centerX" constant="140.5" id="8sR-Uy-H4M"/>
-                            <constraint firstItem="PJx-uP-UcP" firstAttribute="bottom" secondItem="I4W-py-oke" secondAttribute="bottom" constant="-5" id="Dj7-ed-5UX"/>
-                            <constraint firstItem="PJx-uP-UcP" firstAttribute="width" secondItem="I4W-py-oke" secondAttribute="width" id="DpU-5y-qvV"/>
-                            <constraint firstItem="PJx-uP-UcP" firstAttribute="height" secondItem="I4W-py-oke" secondAttribute="height" id="ElW-OV-yz4"/>
-                            <constraint firstItem="dq2-ix-zGX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="261" id="F6o-OI-Z8d"/>
-                            <constraint firstItem="PJx-uP-UcP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="135" id="FHE-oI-j6r"/>
-                            <constraint firstItem="dq2-ix-zGX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="321" id="T75-eM-Ejr"/>
-                            <constraint firstItem="dq2-ix-zGX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="24.5" id="VLG-Ap-Xdb"/>
-                            <constraint firstItem="dq2-ix-zGX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="61" id="aft-dw-XAp"/>
-                            <constraint firstItem="G98-RB-GLz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="15.5" id="e6J-VK-nBC"/>
-                            <constraint firstItem="PJx-uP-UcP" firstAttribute="top" secondItem="dq2-ix-zGX" secondAttribute="bottom" constant="-59" id="eEv-by-bVj"/>
-                            <constraint firstItem="G98-RB-GLz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="243" id="eMH-Ts-qr6"/>
-                            <constraint firstItem="G98-RB-GLz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="15.5" id="lNk-Hv-QNT"/>
-                            <constraint firstItem="G98-RB-GLz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="25" id="mO5-Sp-dKf"/>
-                            <constraint firstAttribute="trailing" secondItem="dq2-ix-zGX" secondAttribute="trailing" constant="342" id="mgB-mV-7Y9"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="G98-RB-GLz" secondAttribute="bottom" constant="408" id="yHY-9r-xWS"/>
+                            <constraint firstItem="I4W-py-oke" firstAttribute="top" secondItem="PJx-uP-UcP" secondAttribute="bottom" constant="51" id="9rk-31-huF"/>
+                            <constraint firstItem="PJx-uP-UcP" firstAttribute="height" secondItem="I4W-py-oke" secondAttribute="height" id="HUv-ea-U9q"/>
+                            <constraint firstItem="PJx-uP-UcP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eaS-px-L0U"/>
+                            <constraint firstAttribute="bottom" secondItem="PJx-uP-UcP" secondAttribute="bottom" constant="193" id="uzN-rY-Mi5"/>
+                            <constraint firstItem="PJx-uP-UcP" firstAttribute="centerX" secondItem="I4W-py-oke" secondAttribute="centerX" id="wde-02-wDI"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="aft-dw-XAp"/>
-                                <exclude reference="mgB-mV-7Y9"/>
-                            </mask>
-                        </variation>
                     </view>
-                    <connections>
-                        <outlet property="oProgressOne" destination="G98-RB-GLz" id="Nav-vB-ke0"/>
-                        <outlet property="oProgressThree" destination="ykN-3s-mCM" id="qCG-zU-nTc"/>
-                        <outlet property="oProgressTwo" destination="dq2-ix-zGX" id="J6u-P3-RjV"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

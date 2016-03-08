@@ -10,32 +10,30 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var oProgressOne: OProgressBar!
+   var oProgressOne: OProgressBar!
     
     
-    @IBOutlet weak var oProgressTwo: OProgressBar!
-    
-    
-    @IBOutlet weak var oProgressThree: OProgressBar!
+   
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        oProgressOne = OProgressBar(frame: CGRectMake(0,0,200,200))
+        
+        oProgressOne.backgroundColor = UIColor.brownColor()
+        self.view.addSubview(oProgressOne)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
     @IBAction func addProgress(sender: AnyObject) {
-        oProgressOne.setProgress(oProgressOne.currentProgress+25, animated: true)
-        oProgressTwo.setProgress(oProgressTwo.currentProgress+25, animated: true)
-        oProgressThree.setProgress(oProgressThree.currentProgress+25, animated: true)
-    }
+        oProgressOne.setProgress(oProgressOne.currentProgress+25, animated: false)
+            }
     
     
     @IBAction func minusprogres(sender: AnyObject) {
         
         oProgressOne.setProgress(oProgressOne.currentProgress-20, animated: true)
-        oProgressTwo.setProgress(oProgressTwo.currentProgress-20, animated: true)
-        oProgressThree.setProgress(oProgressThree.currentProgress-20, animated: true)
+        
         
         
         
