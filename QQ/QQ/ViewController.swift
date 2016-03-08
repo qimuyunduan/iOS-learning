@@ -13,7 +13,7 @@ class ViewController: UITabBarController {
     //主页导航控制器
     var mainNavigationController :UINavigationController!
     //主页面控制器
-    var mainViewController:MainViewController!
+    //var mainViewController:MainViewController!
     
     //菜单页控制器
     var menuViewController:MenuViewController!

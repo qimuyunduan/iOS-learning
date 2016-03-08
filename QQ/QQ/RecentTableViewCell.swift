@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable    class RecentTableViewCell: UITableViewCell {
+@IBDesignable   class RecentTableViewCell: UITableViewCell {
     
     @IBOutlet weak var person: UIImageView!
     
@@ -19,6 +19,7 @@ import UIKit
     @IBOutlet weak var time: UILabel!
     
     @IBInspectable var cornerRadius :CGFloat = 25
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         //设置cell是有圆角边框显示

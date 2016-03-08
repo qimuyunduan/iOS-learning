@@ -149,7 +149,7 @@ import UIKit
         let startAngle = angleToRadian(360*Double(oldProgress)/100-90)
         let endAngle = angleToRadian(360*Double(currentProgress)/100-90)
         let clockWise = currentProgress > oldProgress ? false:true
-        print(clockWise)
+       
         let path = CGPathCreateMutable()
         CGPathAddArc(path, &transform, CGRectGetMidX(bounds), CGRectGetMidY(bounds), radius, startAngle, endAngle, clockWise)
         

@@ -198,30 +198,20 @@
             </objects>
             <point key="canvasLocation" x="-737" y="-10"/>
         </scene>
-        <!--Root View Controller-->
+        <!--联系人-->
         <scene sceneID="aav-3d-0E1">
             <objects>
-                <tableViewController id="rsN-Fu-T25" customClass="ContactControlller" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="VG1-W5-mPU">
+                <tableViewController id="rsN-Fu-T25" customClass="MessageController" customModule="QQ" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="rRo-ms-IaG">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="fJu-On-sQH">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fJu-On-sQH" id="Gdi-RU-uLH">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="rsN-Fu-T25" id="p2F-Za-5ZT"/>
-                            <outlet property="delegate" destination="rsN-Fu-T25" id="CgS-P7-wyr"/>
+                            <outlet property="dataSource" destination="rsN-Fu-T25" id="sPN-m3-d1y"/>
+                            <outlet property="delegate" destination="rsN-Fu-T25" id="HWE-OL-OtO"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="Pn7-uR-SEm"/>
+                    <navigationItem key="navigationItem" title="联系人" id="Pn7-uR-SEm"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eX0-nr-y9B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
