@@ -77,8 +77,9 @@ import UIKit
         path.addArcWithCenter(progressCenter, radius: radius, startAngle: angleToRadian(-90), endAngle: angleToRadian(270), clockwise: true)
         //绘制进度槽
         trackLayer.frame = bounds
+        trackLayer.strokeColor = UIColor.whiteColor().CGColor
         trackLayer.fillColor = UIColor.clearColor().CGColor
-        trackLayer.strokeColor = Constant.trackColor.CGColor
+       
         trackLayer.lineWidth = Constant.lineWidth
         trackLayer.path = path.CGPath
         layer.addSublayer(trackLayer)
@@ -86,9 +87,10 @@ import UIKit
         //绘制进度条
         progressLayer.frame = bounds
         progressLayer.fillColor = UIColor.clearColor().CGColor
-        progressLayer.strokeColor = Constant.color.CGColor
+        progressLayer.strokeColor = UIColor.yellowColor().CGColor
         progressLayer.lineWidth = Constant.lineWidth
         progressLayer.path = path.CGPath
+        //进度开始点，结束点
         progressLayer.strokeStart = 0
         progressLayer.strokeEnd = CGFloat(currentProgress)/100
         layer.addSublayer(progressLayer)
@@ -105,7 +107,7 @@ import UIKit
         arc.fillColor = Constant.color.CGColor
         arc.shadowColor = UIColor.blackColor().CGColor
         arc.shadowRadius = 5.0
-        arc.shadowOpacity = 0.5
+        arc.shadowOpacity = 1
         arc.shadowOffset = CGSizeZero
         dot.layer.addSublayer(arc)
         addSubview(dot)
@@ -114,10 +116,10 @@ import UIKit
         //圆点添加箭头图标
         arrow.frame.size = CGSize(width: Constant.lineWidth, height: Constant.lineWidth)
         dot.addSubview(arrow)
-        
+      
         
         //设置圆点位置
-        dot.layer.position = pointPosition(progressCenter, radius: radius, angle: CGFloat(-currentProgress/100*360+90))
+        dot.layer.position = pointPosition(progressCenter, radius: radius, angle: CGFloat(currentProgress/100*360-90))
         
     }
     //设置进度（可以设置是否播放动画）
@@ -129,6 +131,7 @@ import UIKit
     }
     //设置进度
     func setProgress(pro:Int,animated anim :Bool,withDuration duration :Double) {
+        
         let oldProgress = currentProgress
         currentProgress = pro
         
@@ -146,8 +149,9 @@ import UIKit
         let startAngle = angleToRadian(360*Double(oldProgress)/100-90)
         let endAngle = angleToRadian(360*Double(currentProgress)/100-90)
         let clockWise = currentProgress > oldProgress ? false:true
+        print(clockWise)
         let path = CGPathCreateMutable()
-        CGPathAddArc(path, &transform, CGRectGetMidX(bounds), CGRectGetMidY(bounds), bounds.size.width/2-Constant.lineWidth, startAngle, endAngle, clockWise)
+        CGPathAddArc(path, &transform, CGRectGetMidX(bounds), CGRectGetMidY(bounds), radius, startAngle, endAngle, clockWise)
         
         let orbit = CAKeyframeAnimation(keyPath: "position")
         orbit.path = path
@@ -177,7 +181,7 @@ import UIKit
     
         let x = radius*CGFloat(cosf(Float(angle)*Float(M_PI)/Float(180)))
         let y = radius*CGFloat(sinf(Float(angle)*Float(M_PI)/Float(180)))
-        return CGPointMake(center.x+x, center.y-y)
+        return CGPointMake(center.x+x, center.y+y)
        
     
     }
