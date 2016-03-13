@@ -1,58 +1,63 @@
 //
-//  UILabelCopy.swift
+//  UIImageCopy.swift
 //  UIPasteboard
 //
-//  Created by qimuyunduan on 16/3/12.
+//  Created by qimuyunduan on 16/3/13.
 //  Copyright © 2016年 qimuyunduan. All rights reserved.
 //
 
 import UIKit
-class UILabelCopy:UILabel {
+
+class UIImageCopy: UIImageView {
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        sharedInit()
-        
+        sharedInt()
     }
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
     }
-    func sharedInit() {
+    func sharedInt() {
     
         userInteractionEnabled = true
-        addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: Selector("showMenu:")))
-
-    }
+        addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: "showMenu:"))
     
-    func showMenu(sender:AnyObject) {
+    }
+    func showMenu(sender:AnyObject?) {
     
         becomeFirstResponder()
         let menu = UIMenuController.sharedMenuController()
+        
         if !menu.menuVisible {
             menu.setTargetRect(bounds, inView: self)
             menu.setMenuVisible(true, animated: true)
-        
         }
     
     }
-    //复制功能
-    
     override func copy(sender: AnyObject?) {
         let pasteBoard = UIPasteboard.generalPasteboard()
-        pasteBoard.string = text
-        //点击复制后，菜单是否消失
+        pasteBoard.image = image
 //        let menu = UIMenuController.sharedMenuController()
 //        menu.setMenuVisible(true, animated: true)
+    }
+    override func paste(sender: AnyObject?) {
+        let pasteBoard = UIPasteboard.generalPasteboard()
+        self.image = pasteBoard.image
+//        let menu = UIMenuController.sharedMenuController()
+//        menu.setMenuVisible(true, animated: true)
+//        
     }
     
     override func canBecomeFirstResponder() -> Bool {
         return true
     }
+    
     override func canPerformAction(action: Selector, withSender sender: AnyObject?) -> Bool {
-        if action == "copy:" {
+        if action == "copy:" || action == "paste:" {
             return true
+        
         }
         return false
     }
-    
 }
