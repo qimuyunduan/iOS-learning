@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,GridViewSortDelegate {
 
     var gridViewController: GridViewController!
     
@@ -35,7 +35,44 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    //表格排序函数
+    func sort(colIndex: Int, asc: Bool, rows: [[AnyObject]]) -> [[AnyObject]] {
+        
+        let sortedRows = rows.sort {
+            
+            (firstRow: [AnyObject], secondRow: [AnyObject])-> Bool in
+            
+            let firstRowValue = firstRow[colIndex] as! String
+            let secondRowValue = secondRow[colIndex] as! String
+            
+            if colIndex == 0 {
+                //首例姓名使用字典排序法
+                if asc {
+                    return firstRowValue < secondRowValue
+                }
+                
+                return firstRowValue > secondRowValue
+                
+            } else if colIndex == 1 || colIndex == 2 {
+                //中间两列使用数字排序
+                if asc {
+                    return Int(firstRowValue)! < Int(secondRowValue)!
+                }
+                return Int(firstRowValue)! > Int(secondRowValue)!
+            }
+            //最后一列数据先去掉百分号，再转成数字比较
+            let firstRowValuePercent = Int(firstRowValue.substringToIndex(
+                firstRowValue.endIndex.advancedBy(-1)))
+            let secondRowValuePercent = Int(secondRowValue.substringToIndex(
+                secondRowValue.endIndex.advancedBy(-1)))
+            if asc {
+                return firstRowValuePercent < secondRowValuePercent
+            }
+            return firstRowValuePercent > secondRowValuePercent
+            
+        }
+        return sortedRows
+    }
 
 }
 

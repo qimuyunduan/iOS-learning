@@ -9,10 +9,21 @@
 import Foundation
 import UIKit
 
+//表格排序协议
+protocol GridViewSortDelegate {
+    func sort(colIndex: Int, asc: Bool, rows: [[AnyObject]]) -> [[AnyObject]]
+}
+
 class GridViewController: UICollectionViewController {
     //表头数据
     var cols:[String]!      = []
     var rows:[[AnyObject]]! = []
+    //排序代理
+    var sortDelegate:GridViewSortDelegate!
+    //选中的表格列（-1表示没有选中的）
+    private var selectedColIndex = -1
+    //列排序顺序
+    private var asc = true
     //内容居左侧时内边距
     private var paddingLeft:CGFloat = 5
     
@@ -112,6 +123,14 @@ class GridViewController: UICollectionViewController {
                 label.text = "\(rows[indexPath.section-1][indexPath.row])"
             }
             cell.addSubview(label)
+            //列排序
+            if indexPath.row == selectedColIndex {
+                //排序列的单元格背景会变色
+                cell.backgroundColor = UIColor(red: 122/255, green: 186/255, blue: 255/255,
+                    alpha: 1)
+                //排序列列头显示升序降序图标，并调整列头标签相关位置
+                
+            }
             
             return cell
     }
@@ -121,5 +140,12 @@ class GridViewController: UICollectionViewController {
         didSelectItemAtIndexPath indexPath: NSIndexPath) {
             //打印出点击单元格的［行,列］坐标
             print("点击单元格的[行,列]坐标: [\(indexPath.section),\(indexPath.row)]")
+            if indexPath.section == 0 && sortDelegate != nil {
+                //如果点击的是表头单元格，则默认该列升序排列，再次点击则变降序排列，以此交替
+                asc = (selectedColIndex != indexPath.row) ? true : !asc
+                selectedColIndex = indexPath.row
+                rows = sortDelegate.sort(selectedColIndex, asc: asc, rows: rows)
+                collectionView.reloadData()
+            }
     }
 }
