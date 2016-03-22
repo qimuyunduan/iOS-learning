@@ -16,8 +16,23 @@
                     <view key="view" contentMode="scaleToFill" id="Ooz-al-2Gw">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qO8-wE-ytK">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="585"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qO8-wE-ytK" firstAttribute="bottom" secondItem="2Zg-Dy-941" secondAttribute="top" constant="-15" id="0jH-M8-avG"/>
+                            <constraint firstItem="qO8-wE-ytK" firstAttribute="top" secondItem="FQa-7k-riM" secondAttribute="bottom" constant="-64" id="E0E-yk-jqL"/>
+                            <constraint firstItem="qO8-wE-ytK" firstAttribute="width" secondItem="Ooz-al-2Gw" secondAttribute="width" id="mCa-N6-brn"/>
+                            <constraint firstItem="qO8-wE-ytK" firstAttribute="leading" secondItem="Ooz-al-2Gw" secondAttribute="leading" id="om4-9s-Lqe"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="qO8-wE-ytK" id="hav-6y-ds7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ek9-GF-1lG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
