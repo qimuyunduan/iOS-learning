@@ -6,8 +6,9 @@
 //  Copyright © 2016年 qimuyunduan. All rights reserved.
 //
 
-import XCTest
 
+
+import XCTest
 class XCtestUITests: XCTestCase {
         
     override func setUp() {
@@ -24,13 +25,24 @@ class XCtestUITests: XCTestCase {
     }
     
     override func tearDown() {
+        
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
     
-    func testExample() {
-        // Use recording to get started writing UI tests.
+    func testWebview() {
+        
+       // XCTAssertNotNil(ViewController., "pass not nil")   
+        XCTAssert(true, "passed")
+        // Use recording to get started writing UI
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
+    func testPerformanceExample() {
+        //这是一个测试用例
+        self.measureBlock() {
+            //在此填写需要测量运行时间的代码
+        }
+    }
+    
     
 }
