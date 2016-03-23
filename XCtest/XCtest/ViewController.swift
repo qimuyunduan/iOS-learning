@@ -34,16 +34,18 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate,UIWebViewDele
         spacer.width = -20
         self.navigationItem.leftBarButtonItems = [spacer,leftBarButton]
         //启用滑动放回
-        let target = self.navigationController?.interactivePopGestureRecognizer?.delegate
-        let panGesture = UIPanGestureRecognizer(target: target, action: nil)
-        panGesture.delegate = self
-        self.view.addGestureRecognizer(panGesture)
-        self.navigationController?.interactivePopGestureRecognizer?.enabled = false
+       
+        let swipeGesture = UISwipeGestureRecognizer(target: self, action: nil)
+        swipeGesture.delegate = self
+        self.view.addGestureRecognizer(swipeGesture)
+       
         // Do any additional setup after loading the view, typically from a nib.
     }
     //是否应该同时识别其他的手势识别器
     func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        
         if self.childViewControllers.count == 1 {
+            
             return false
         }
         
