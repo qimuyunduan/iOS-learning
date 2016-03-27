@@ -15,7 +15,7 @@ extension UITextView {
         attributeString.appendAttributedString(self.attributedText)
         
         //新增的文本内容
-        let attr = [NSFontAttributeName:self.font!]
+        let attr = [NSFontAttributeName:self.font]
         let appendString = NSMutableAttributedString(string: string, attributes: attr)
         //判断是否是链接文字
         if withUrlString != "" {
@@ -34,12 +34,14 @@ class ViewController: UIViewController,UITextViewDelegate {
     
 
     @IBOutlet weak var textView: UITextView!
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        textView = UITextView()
         textView.delegate = self
         textView.text = ""
-        textView.center = self.view.center
+      
         textView.appendLinkString("欢迎使用..\n")
         textView.appendLinkString("(1)")
         textView.appendLinkString("查看详细说明",withUrlString: "about:from123\n")

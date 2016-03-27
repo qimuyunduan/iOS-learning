@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,24 +17,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4YA-io-JAn">
-                                <rect key="frame" x="180" y="245" width="240" height="110"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fMq-oV-MME">
+                                <rect key="frame" x="180" y="230" width="240" height="140"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="xSR-hp-Hc8"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="4YA-io-JAn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="08H-pr-gzJ"/>
-                            <constraint firstItem="4YA-io-JAn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="160" id="DHm-7T-oTT"/>
-                            <constraint firstItem="4YA-io-JAn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ahw-Aj-EA4"/>
-                            <constraint firstItem="4YA-io-JAn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="225" id="uny-rR-K2u"/>
+                            <constraint firstItem="fMq-oV-MME" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ChB-Pf-3we"/>
+                            <constraint firstItem="fMq-oV-MME" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Qtx-uf-qbG"/>
+                            <constraint firstItem="fMq-oV-MME" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="210" id="oZa-6K-mGL"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="textView" destination="4YA-io-JAn" id="BVF-Sx-IWk"/>
+                        <outlet property="textView" destination="fMq-oV-MME" id="OyR-Jd-kIZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
