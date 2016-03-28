@@ -1,8 +1,8 @@
 //
-//  ViewController.swift
+//  ViewController.swi,ft
 //  customLink
 //
-//  Created by qimuyunduan on 16/3/26.
+//  Created ///////by qimuyunduan on 16/3/26.
 //  Copyright © 2016年 qimuyunduan. All rights reserved.
 //
 
@@ -15,7 +15,7 @@ extension UITextView {
         attributeString.appendAttributedString(self.attributedText)
         
         //新增的文本内容
-        let attr = [NSFontAttributeName:self.font]
+        let attr = [NSFontAttributeName:self.font!]
         let appendString = NSMutableAttributedString(string: string, attributes: attr)
         //判断是否是链接文字
         if withUrlString != "" {
