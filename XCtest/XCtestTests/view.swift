@@ -1,7 +1,7 @@
 import Quick
 import Nimble
 
-class XCtestTests: QuickSpec {
+class view: QuickSpec {
     override func spec() {
 
     }
