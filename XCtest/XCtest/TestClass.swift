@@ -38,6 +38,7 @@ class TestClass {
     }
     func addWishes(wish:String){
         self.wishContainer?.itemValues.append(wish)
+        self.wishContainer?.setItemCount()
     }
     
     
