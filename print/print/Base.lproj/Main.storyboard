@@ -21,29 +21,32 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4F1-xO-5sY">
                                 <rect key="frame" x="72" y="235" width="459" height="159"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NdL-uP-x56">
-                                        <rect key="frame" x="33" y="47" width="50" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <state key="normal" title="打印1"/>
-                                        <connections>
-                                            <action selector="printOne:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NOn-bv-Jwq"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0E3-QX-zJ1">
-                                        <rect key="frame" x="138" y="47" width="52" height="36"/>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0E3-QX-zJ1">
+                                        <rect key="frame" x="388" y="47" width="52" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="打印2"/>
                                         <connections>
                                             <action selector="printTwo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tAl-UX-rlb"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NdL-uP-x56">
+                                        <rect key="frame" x="28" y="47" width="85" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="85" id="uLX-f4-ZGb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="打印1"/>
+                                        <connections>
+                                            <action selector="printOne:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3pT-c7-n40"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="0E3-QX-zJ1" firstAttribute="baseline" secondItem="NdL-uP-x56" secondAttribute="baseline" id="RQQ-Ci-thf"/>
-                                    <constraint firstItem="0E3-QX-zJ1" firstAttribute="top" secondItem="4F1-xO-5sY" secondAttribute="top" constant="47" id="stI-Xr-RGz"/>
-                                    <constraint firstAttribute="trailing" secondItem="0E3-QX-zJ1" secondAttribute="trailing" constant="269" id="vG1-2d-Eip"/>
-                                    <constraint firstItem="0E3-QX-zJ1" firstAttribute="leading" secondItem="NdL-uP-x56" secondAttribute="trailing" constant="55" id="wvs-mz-9yk"/>
+                                    <constraint firstItem="NdL-uP-x56" firstAttribute="baseline" secondItem="0E3-QX-zJ1" secondAttribute="baseline" id="0pq-ef-N9A"/>
+                                    <constraint firstAttribute="trailing" secondItem="0E3-QX-zJ1" secondAttribute="trailing" constant="19" id="9bV-pH-l2z"/>
+                                    <constraint firstItem="0E3-QX-zJ1" firstAttribute="top" secondItem="4F1-xO-5sY" secondAttribute="top" constant="47" id="TFV-5U-eUt"/>
+                                    <constraint firstItem="NdL-uP-x56" firstAttribute="leading" secondItem="4F1-xO-5sY" secondAttribute="leading" constant="28" id="yDJ-nc-jm2"/>
                                 </constraints>
                             </view>
                         </subviews>
