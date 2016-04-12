@@ -18,7 +18,7 @@ class ViewController: UIViewController,UIPrintInteractionControllerDelegate {
         
         //设置打印控制器
         let printController = UIPrintInteractionController.sharedPrintController()
-        
+        printController.delegate = self
         //设置打印信息
         let printInfo = UIPrintInfo(dictionary: nil)
         printInfo.outputType = UIPrintInfoOutputType.General
@@ -41,6 +41,7 @@ class ViewController: UIViewController,UIPrintInteractionControllerDelegate {
         
         // 打印控制器
         let printController = UIPrintInteractionController.sharedPrintController()
+        printController.delegate = self
         // 打印任务相关信息
         let printInfo = UIPrintInfo(dictionary:nil)
         printInfo.outputType = UIPrintInfoOutputType.General
@@ -151,6 +152,22 @@ class ViewController: UIViewController,UIPrintInteractionControllerDelegate {
         printController.printFormatter = formatter
         // 提供打印界面让用户选择打印机和副本的数量
         printController.presentAnimated(true, completionHandler: nil)
+    }
+    func printInteractionController(printInteractionController: UIPrintInteractionController, choosePaper paperList: [UIPrintPaper]) -> UIPrintPaper {
+        
+        //A6尺寸 (像素)
+        let pageSize:CGSize = CGSizeMake(10.5 / 2.54 * 72, 14.8 / 2.54 * 72)
+        print("想要设置的尺寸：",pageSize)
+        
+        print("打印机支持的所有尺寸：")
+        for p in paperList {
+            print(p.paperSize)
+        }
+        
+        let paper = UIPrintPaper.bestPaperForPageSize(pageSize, withPapersFromArray: paperList)
+        print("最终打印尺寸：", paper.paperSize)
+        
+        return paper
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
