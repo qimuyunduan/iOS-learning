@@ -21,7 +21,7 @@ class SaveImageUtils: NSObject {
         return (PHPhotoLibrary.authorizationStatus() == PHAuthorizationStatus.Authorized || PHPhotoLibrary.authorizationStatus() == PHAuthorizationStatus.NotDetermined)
     }
     
-    
+    static var assetAlbum :PHAssetCollection?
     //保存图片
     class func saveImageInAlbum(image:UIImage,albumName:String = "" ,completionHandler:(result:SaveImageResult)->()) {
         
@@ -31,7 +31,7 @@ class SaveImageUtils: NSObject {
             
         }
         
-        var assetAlbum :PHAssetCollection?
+        
         
         if albumName.isEmpty {
             
@@ -57,8 +57,8 @@ class SaveImageUtils: NSObject {
                     
                 }
                 //若不存在则创建该相册
-                if assetAlbum == nil {
-                    
+                if (assetAlbum == nil) {
+                    print("不存在该相册....")
                     PHPhotoLibrary.sharedPhotoLibrary().performChanges({
                         PHAssetCollectionChangeRequest.creationRequestForAssetCollectionWithTitle(albumName)
                         
@@ -67,7 +67,7 @@ class SaveImageUtils: NSObject {
                             
                             (isSuccess,error) in
                             
-                            self.saveImageInAlbum(image, completionHandler: completionHandler)
+                            self.saveImageInAlbum(image, albumName: "blog", completionHandler: completionHandler)
                             
                     })
                     return

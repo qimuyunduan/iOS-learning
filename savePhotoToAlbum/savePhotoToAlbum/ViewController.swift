@@ -25,7 +25,9 @@ class ViewController: UIViewController {
     @IBAction func saveImage(sender: AnyObject) {
         
         SaveImageUtils.saveImageInAlbum(imageView.image!){
+            
             (result) in
+            
             switch result{
                 
             case .SUCCESS:
