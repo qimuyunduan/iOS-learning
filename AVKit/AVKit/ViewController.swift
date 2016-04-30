@@ -11,25 +11,27 @@ import AVKit
 import AVFoundation
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        let videoURL = ""
+        //本地视频
+//        let filePath = NSBundle.mainBundle().pathForResource("348714514", ofType:"mp4")
+//       
+//        let videoURL = NSURL(fileURLWithPath: filePath!)
+        //网络视频
+        let videoURL = NSURL(string: "http://hangge.com/demo.mp4")
         
-        let AVPlayer = AVPlayer(URL:videoURL)
-        let playerController = AVPlayerLayerController(player: AVPlayer)
-        playerController.
-        
+        //定义一个视频播放器，通过本地文件路径初始化
+        let player = AVPlayer(URL: videoURL!)
+        //设置大小和位置（全屏）
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = self.view.bounds
+        //添加到界面上
+        self.view.layer.addSublayer(playerLayer)
+        //开始播放
+        player.play()
     }
-    override func didReceiveMemoryWarning() {
+        override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
-
 }
-
