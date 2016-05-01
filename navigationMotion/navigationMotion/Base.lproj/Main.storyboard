@@ -1,30 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="00B-dD-uZ6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="86r-tV-BQ6">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="Ybt-0L-DnR">
-            <objects>
-                <navigationController navigationBarHidden="YES" id="00B-dD-uZ6" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="A0X-GR-CTI">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="86r-tV-BQ6" kind="show" id="XLU-rV-db0"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9bc-42-Ztc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1378" y="679"/>
-        </scene>
         <!--View Controller-->
         <scene sceneID="eoQ-yz-qLT">
             <objects>
-                <viewController id="86r-tV-BQ6" sceneMemberID="viewController">
+                <viewController id="86r-tV-BQ6" customClass="ViewController" customModule="navigationMotion" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xNT-FT-vuW"/>
                         <viewControllerLayoutGuide type="bottom" id="HME-7s-8mg"/>
@@ -43,16 +27,13 @@
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </textAttributes>
-                                <items>
-                                    <navigationItem title="首页" id="gcZ-a3-F7o"/>
-                                </items>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K6r-bk-w48">
                                 <rect key="frame" x="264" y="283" width="72" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="查看详情"/>
                                 <connections>
-                                    <segue destination="TpF-s5-fi6" kind="showDetail" id="6V4-Gu-hGn"/>
+                                    <segue destination="TpF-s5-fi6" kind="show" action="showDetailViewController:sender:" id="6V4-Gu-hGn"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -62,6 +43,8 @@
                             <constraint firstItem="K6r-bk-w48" firstAttribute="centerY" secondItem="gl8-j0-tQS" secondAttribute="centerY" id="Gne-UY-9PA"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0SE-7L-LVq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -106,7 +89,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6hR-xS-BtT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32" y="679"/>
+            <point key="canvasLocation" x="406" y="524"/>
         </scene>
     </scenes>
 </document>
