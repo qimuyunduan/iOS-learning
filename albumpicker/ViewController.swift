@@ -25,7 +25,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         
         changeImageButton.layer.cornerRadius = self.changeImageButton.frame.width/2.0
         changeImageButton.alpha = 0.5
-        changeImageButton.addTarget(self, action: "showMyself:", forControlEvents: UIControlEvents.TouchUpInside)
+        changeImageButton.addTarget(self, action: #selector(ViewController.showMyself(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         
     }
     
@@ -71,8 +71,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     func choosePictureFromCamera() {
         if UIImagePickerController.isSourceTypeAvailable(.Camera)
         {
-            
-            
+        
             picker.delegate = self
             //设置图片类型
             picker.sourceType = UIImagePickerControllerSourceType.Camera

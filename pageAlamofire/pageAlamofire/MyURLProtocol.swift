@@ -62,8 +62,7 @@ class MyURLProtocol: NSURLProtocol,NSURLSessionDelegate,NSURLSessionTaskDelegate
             
             //将数据返回到客户端。然后调用URLProtocolDidFinishLoading方法来结束加载。
             //（设置客户端的缓存存储策略.NotAllowed ，即让客户端做任何缓存的相关工作）
-            self.client!.URLProtocol(self, didReceiveResponse: response,
-                                     cacheStoragePolicy: .NotAllowed)
+            self.client!.URLProtocol(self, didReceiveResponse: response,cacheStoragePolicy: .NotAllowed)
             self.client!.URLProtocol(self, didLoadData: data)
             self.client!.URLProtocolDidFinishLoading(self)
         } else {
@@ -73,13 +72,11 @@ class MyURLProtocol: NSURLProtocol,NSURLSessionDelegate,NSURLSessionTaskDelegate
             let newRequest = self.request.mutableCopy() as! NSMutableURLRequest
             //NSURLProtocol接口的setProperty()方法可以给URL请求添加自定义属性。
             //（这样把处理过的请求做个标记，下一次就不再处理了，避免无限循环请求）
-            NSURLProtocol.setProperty(true, forKey: "MyURLProtocolHandledKey",
-                                      inRequest: newRequest)
+            NSURLProtocol.setProperty(true, forKey: "MyURLProtocolHandledKey",inRequest: newRequest)
             
             //使用NSURLSession从网络获取数据
             let defaultConfigObj = NSURLSessionConfiguration.defaultSessionConfiguration()
-            let defaultSession = NSURLSession(configuration: defaultConfigObj,
-                                              delegate: self, delegateQueue: nil)
+            let defaultSession = NSURLSession(configuration: defaultConfigObj,delegate: self, delegateQueue: nil)
             self.dataTask = defaultSession.dataTaskWithRequest(newRequest)
             self.dataTask!.resume()
         }
@@ -96,14 +93,12 @@ class MyURLProtocol: NSURLProtocol,NSURLSessionDelegate,NSURLSessionTaskDelegate
     func URLSession(session: NSURLSession, dataTask: NSURLSessionDataTask,didReceiveResponse response: NSURLResponse,
                     completionHandler: (NSURLSessionResponseDisposition) -> Void) {
         
-        self.client?.URLProtocol(self, didReceiveResponse: response,
-                                 cacheStoragePolicy: .NotAllowed)
+        self.client?.URLProtocol(self, didReceiveResponse: response,cacheStoragePolicy: .NotAllowed)
         self.urlResponse = response
         self.receivedData = NSMutableData()
         completionHandler(.Allow)
     }
-    func URLSession(session: NSURLSession, dataTask: NSURLSessionDataTask,
-                    didReceiveData data: NSData) {
+    func URLSession(session: NSURLSession, dataTask: NSURLSessionDataTask,didReceiveData data: NSData) {
         self.client?.URLProtocol(self, didLoadData: data)
         self.receivedData?.appendData(data)
     }

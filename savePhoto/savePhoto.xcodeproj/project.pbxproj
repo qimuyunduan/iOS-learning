@@ -12,7 +12,6 @@
 		F9DB99C71CBE053A0086CED8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9DB99C51CBE053A0086CED8 /* Main.storyboard */; };
 		F9DB99C91CBE053A0086CED8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9DB99C81CBE053A0086CED8 /* Assets.xcassets */; };
 		F9DB99CC1CBE053A0086CED8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9DB99CA1CBE053A0086CED8 /* LaunchScreen.storyboard */; };
-		F9DB99D41CBE07B70086CED8 /* f.png in Resources */ = {isa = PBXBuildFile; fileRef = F9DB99D31CBE07B70086CED8 /* f.png */; };
 		F9DB99D61CBE07BD0086CED8 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F9DB99D51CBE07BD0086CED8 /* 1.jpg */; };
 /* End PBXBuildFile section */
 
@@ -24,7 +23,6 @@
 		F9DB99C81CBE053A0086CED8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F9DB99CB1CBE053A0086CED8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F9DB99CD1CBE053A0086CED8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F9DB99D31CBE07B70086CED8 /* f.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = f.png; path = ../../../f.png; sourceTree = "<group>"; };
 		F9DB99D51CBE07BD0086CED8 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 1.jpg; path = ../../../1.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,7 +61,6 @@
 				F9DB99C51CBE053A0086CED8 /* Main.storyboard */,
 				F9DB99C81CBE053A0086CED8 /* Assets.xcassets */,
 				F9DB99D51CBE07BD0086CED8 /* 1.jpg */,
-				F9DB99D31CBE07B70086CED8 /* f.png */,
 				F9DB99CA1CBE053A0086CED8 /* LaunchScreen.storyboard */,
 				F9DB99CD1CBE053A0086CED8 /* Info.plist */,
 			);
@@ -130,7 +127,6 @@
 			files = (
 				F9DB99CC1CBE053A0086CED8 /* LaunchScreen.storyboard in Resources */,
 				F9DB99C91CBE053A0086CED8 /* Assets.xcassets in Resources */,
-				F9DB99D41CBE07B70086CED8 /* f.png in Resources */,
 				F9DB99C71CBE053A0086CED8 /* Main.storyboard in Resources */,
 				F9DB99D61CBE07BD0086CED8 /* 1.jpg in Resources */,
 			);
@@ -296,6 +292,7 @@
 				F9DB99D21CBE053A0086CED8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -34,7 +34,8 @@ class ViewController: UIViewController {
             let assetPlaceHolder = result.placeholderForCreatedAsset
             //保存标识符
             self.photoID = assetPlaceHolder?.localIdentifier
-            }, completionHandler: {(isSuccess:Bool,error:NSError?) in
+            }, completionHandler: {
+                (isSuccess:Bool,error:NSError?) in
                 if isSuccess {
                     print("保存成功.....")
                     let assetResult = PHAsset.fetchAssetsWithLocalIdentifiers([self.photoID], options: nil)

@@ -42,7 +42,8 @@ class ViewController: UIViewController {
     func sendRequest() {
         if let text = self.textField.text {
             manager?.request(.GET, text)
-                .responseString(queue: nil, encoding: NSUTF8StringEncoding) { response in
+                .responseString(queue: nil, encoding: NSUTF8StringEncoding) {
+                    response in
                     self.textView.text = response.result.value
             }
         }
