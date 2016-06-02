@@ -46,6 +46,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
         let imageData = UIImageJPEGRepresentation(pickedImage, 1.0)
         fileManager.createFileAtPath(filePath, contents: imageData, attributes: nil)
         
+        
+        
         //上传图片
         if (fileManager.fileExistsAtPath(filePath)){
             //取得NSURL
